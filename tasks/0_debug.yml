@@ -1,0 +1,8 @@
+# - name: get facts
+#   ansible.builtin.setup:
+#   resgister: output
+
+- name: debug
+  ansible.builtin.debug:
+    msg: '{{ ansible_facts }}'
+  when: ansible_facts['virtualization_role'] == 'guest'
